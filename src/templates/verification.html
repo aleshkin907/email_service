@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подтверждение регистрации</title>
+    <style>
+        {% include 'styles.css' %}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Добро пожаловать!</h1>
+        </div>
+        <p>Привет, {{ username }}!</p>
+        <p>Вы успешно зарегистрировались на нашем сайте. Для завершения регистрации, пожалуйста, нажмите кнопку ниже:</p>
+        <a href="{{ url }}" class="button">Подтвердить регистрацию</a>
+    </div>
+</body>
+</html>
