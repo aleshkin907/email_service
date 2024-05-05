@@ -13,7 +13,6 @@ class HTMLEmailRender:
         loader=FileSystemLoader(TEMPLATES_PATH),
         autoescape=select_autoescape(['html', 'xml'])
         )
-
         template = env.get_template(f'{template_name}.html')
         html = template.render(
             url=self.url,

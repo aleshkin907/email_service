@@ -1,6 +1,5 @@
 from typing import List
 from fastapi_mail import FastMail, MessageSchema, ConnectionConfig
-from pydantic import EmailStr, BaseModel
 from configs.config import settings
 
 
@@ -34,6 +33,5 @@ class Email:
             subtype="html"
         )
 
-        # Send the email
         fm = FastMail(conf)
         await fm.send_message(message)
