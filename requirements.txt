@@ -21,6 +21,7 @@ MarkupSafe==2.1.5
 mdurl==0.1.2
 orjson==3.10.2
 packaging==24.0
+pyaml-env==1.2.1
 pydantic==2.7.1
 pydantic-settings==2.2.1
 pydantic-settings-yaml==0.2.0
