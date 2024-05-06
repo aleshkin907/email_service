@@ -1,22 +1,12 @@
 import os
-import yaml
 
-from pydantic import BaseModel
-
-from schemas.settings_schemas import EmailSettingsSchema
+from pyaml_env import parse_config, BaseConfig
 
 
-class Settings(BaseModel):
-    email: EmailSettingsSchema
-    url: str
+CONFIG_FILE_NAME = "config.yaml"
 
+# This is the path to the config file.
+current_directory = os.path.dirname(os.path.abspath(__file__))
+directory = os.path.join(current_directory, os.pardir, os.pardir)
 
-def load_config():
-    current_dir = os.path.dirname(__file__)
-    parent_dir = os.path.dirname(os.path.dirname(current_dir)).strip("/")
-    config_file  = "/" + parent_dir + "/config.yaml"
-    with open(config_file, 'r') as config_file:
-        config = yaml.safe_load(config_file)
-    return Settings(**config)
-
-settings = load_config()
+settings = BaseConfig(parse_config(os.path.normpath(directory) + f"/{CONFIG_FILE_NAME}"))
